@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div  class="col-8 text-center" *ngIf="pelicula">
+        <div>
+            <img width="150px" src={{pelicula.foto}} alt="imagen"/>
+            <h2>{{pelicula.titulo}}</h2>
+            <h3>{{pelicula.argumento}}</h3>
+            
+            <a class="btn btn-danger" [routerLink]="['/peliculas',pelicula.idGenero]">Volver</a>
+            <button data-bs-toggle="modal" data-bs-target="#myModal" (click)="recogerPelicula(pelicula)">Eliminar</button>
+
+        </div>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+  
+                <div class="modal-header">
+                  <h4 class="modal-title">ELIMINAR</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+  
+                <div class="modal-body">¿Desea Elimnar la película?</div>
+  
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-bs-dismiss="modal" (click)="eliminarPelicula()">Aceptar</button>
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div  class="row justify-content-center">
+    <div  class="col-8 text-center" *ngIf="!pelicula">
+        <div class="spinner-grow text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-secondary" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-success" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-danger" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-warning" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <div class="spinner-grow text-info" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
+</div>
