@@ -47,7 +47,12 @@ export class PeliculasComponent implements OnInit {
     {
       this.pelicula = event
   }
-  
+  eliminarPelicula(event : number) : void{
+    console.log(event)
+    this._service.deletePelicula(event).subscribe(res=>{
+     
+    })
+  }
   
   
 

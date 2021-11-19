@@ -12,7 +12,9 @@ import { PeliculasComponent } from '../peliculas/peliculas.component';
 export class DetallespeliculaComponent implements OnInit {
   @Input() peli! : Pelicula;
   @Input() index! : number;
+  @Output() eliminar : EventEmitter<any> = new EventEmitter()
   public pelicula! : Pelicula
+
   public idPelicula! : string
   public genero! : string
   public nacionalidad! : string
@@ -58,6 +60,9 @@ export class DetallespeliculaComponent implements OnInit {
       console.log(res.nombre)
 
     })
+  }
+  eliminarhijo(){
+    this.eliminar.emit(this.peli.idPelicula)
   }
 
   cargarNacionalidad(){
