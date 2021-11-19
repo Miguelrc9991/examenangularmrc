@@ -43,4 +43,31 @@ export class ServicePeliculas{
         var url = Global.urlpeliculas+request;
         return this._http.delete(url);
     }
+    getNGenero(idGenero : string):Observable<any>{
+        var request = "api/generos/"+idGenero;
+        var url = Global.urlpeliculas+request;
+        console.log(url)
+        return this._http.get(url);
+    }
+    getNNacionalidad(idNacionalidad : string):Observable<any>{
+        var request = "api/nacionalidades/"+idNacionalidad;
+        var url = Global.urlpeliculas+request;
+        console.log(url)
+
+        return this._http.get(url);
+    }
+    buscarPeliculas(titulo : string):Observable<any>{
+        var request = "api/peliculas/peliculastitulo/"+titulo;
+        var url = Global.urlpeliculas+request;
+        console.log(url)
+        return this._http.get(url);
+    }
+    cambiarGenero(idPelicula : number, idGenero:number):Observable<any>{
+        var request = "api/peliculas/updatepeliculagenero/"+idPelicula+"/"+idGenero;
+        var url = Global.urlpeliculas+request;
+        console.log(url)
+        return this._http.put(url,"");
+
+    }
+    
 }

@@ -13,6 +13,7 @@ import { DetallespeliculaComponent } from './components/detallespelicula/detalle
 import { NuevogeneroComponent } from './components/nuevogenero/nuevogenero.component';
 import { NuevanacionalidadComponent } from './components/nuevanacionalidad/nuevanacionalidad.component';
 import { ModificarpeliculaComponent } from './components/modificarpelicula/modificarpelicula.component';
+import { BuscarpeliculasComponent } from './components/buscarpeliculas/buscarpeliculas.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ModificarpeliculaComponent } from './components/modificarpelicula/modif
     DetallespeliculaComponent,
     NuevogeneroComponent,
     NuevanacionalidadComponent,
-    ModificarpeliculaComponent
+    ModificarpeliculaComponent,
+    BuscarpeliculasComponent
   ],
   imports: [
     BrowserModule,

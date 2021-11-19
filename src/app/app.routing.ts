@@ -4,6 +4,7 @@ import { HomeComponent } from "./components/home/home.component";
 import { PeliculasComponent } from "./components/peliculas/peliculas.component";
 import { DetallespeliculaComponent } from "./components/detallespelicula/detallespelicula.component";
 import { ModificarpeliculaComponent } from "./components/modificarpelicula/modificarpelicula.component";
+import { BuscarpeliculasComponent } from "./components/buscarpeliculas/buscarpeliculas.component";
 const appRoutes : Routes = [
     {path:"", component : HomeComponent},
     {path:"home", component : HomeComponent},
@@ -11,6 +12,7 @@ const appRoutes : Routes = [
     {path:"peliculas/:nacionalidad", component : PeliculasComponent},
     {path:"pelicula/:idPelicula", component : DetallespeliculaComponent},
     {path:"modificar/:idPelicula", component : ModificarpeliculaComponent},
+    {path:"buscarpeliculas/:titulo", component : BuscarpeliculasComponent},
 
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ServicePeliculas } from 'src/app/services/peliculas.service';
 import { Pelicula } from 'src/app/models/Peliculas';
 import { Router } from '@angular/router';
@@ -11,6 +11,8 @@ import { Nacionalidad } from 'src/app/models/Nacionalidades';
 })
 export class MenuComponent implements OnInit {
   public generos! : Array<Genero>
+  @ViewChild('cajaBuscar') cajaBuscar! : ElementRef;
+
   public nacionalidades! : Array<Nacionalidad>
 
   constructor(private _service : ServicePeliculas,  private _router : Router) { }
@@ -30,6 +32,11 @@ this._service.getGeneros().subscribe(res=>{
       this.nacionalidades = res
       console.log(res)
     })
+
+  }
+  buscarPeliculas(){
+    var titulo = this.cajaBuscar.nativeElement.value;
+    this._router.navigate(['/buscarpeliculas',titulo]);
 
   }
 

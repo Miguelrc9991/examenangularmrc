@@ -3,8 +3,18 @@
         <div>
             <img width="150px" src={{pelicula.foto}} alt="imagen"/>
             <h2>{{pelicula.titulo}}</h2>
+            <h2>Genero: {{genero}}</h2>
+            <h2>Nacionalidad: {{nacionalidad}}</h2>
+
             <h3>{{pelicula.argumento}}</h3>
+            <video src={{pelicula.enlaceVideo}}></video>
+            <div>Modificar Genero: </div>
+
+<select name="selectGenero" #selectGenero>              <option *ngFor="let gen of generos" value="{{gen.idGenero}}"><a class="dropdown-item" >{{gen.nombre}}</a></option>
             
+            </select>
+            <button class="btn btn-warning" (click)=cambiarGenero()>Cambiar</button>
+
             <a class="btn btn-danger" [routerLink]="['/peliculas',pelicula.idGenero]">Volver</a>
             <button data-bs-toggle="modal" data-bs-target="#myModal" (click)="recogerPelicula(pelicula)">Eliminar</button>
 
